@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+      <meta charset="utf-8" />
+        
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" id="viewport"/>
+ 
+    <link rel="stylesheet" type="text/css" href="css/rete.css" />
+    <script language="javaScript" src="js/rete.js"></script>
+  <title>calcolo rete a mezzeria</title>
+    
+  </head>
+  <body onload="init()">
+     <div id="contentsoci"> 
+
+    <div id="contentapp">
+   <div id="intro"> 
+  <h1 class="titleindex">CALCOLO DELLE ARMATURE
+  </h1> <br>
+  <p class="introtext"> 
+L'armatura non aumenta la capacita portante del pavimento ma serve:
+<ol>
+<li>se posta in basso (armatura statica) sopporta il pavimento con sottofondo incerto
+</li>
+<li>se posta a 6 cm dall'estradosso (per evitare l'effetto scheletro) limita l'aperttura delle fessure
+</li>
+</ol>
+
+ </p> 
+
+  <button id="scendi" onclick="fineintro()" style="border:none;background-color:#fff;display:block;margin:0 auto;"><img src="img/btndwn.png" width="60" alt="scendi" /> </button>
+  </div>
+  <div id="pinserimento">
+  <div id="inserimento">
+       <div class="ins">
+       <div class="titoloins">
+      <label for="spesspav">Spessore pav. cm</label>
+       </div>
+       <div class="inputins"> 
+        <input type=number name="spesspav" id="spesspav" autofocus>
+       </div>
+       </div>
+       
+       <div class="ins">
+       <div class="titoloins">
+      <label for="digiucont">Dist. giunti ml </label>
+       </div>
+       <div class="inputins"> 
+      <input type=number name="digiucont" id="digiucont" >
+       </div>
+       </div>
+       
+        <div class="ins">
+       <div class="titoloins">
+      <label for="coeffreaz">coeff. K  <b>N/mm<sup>3</sup></b> </label>
+       </div>
+       <div class="inssel"> 
+       <select id="portanza">
+       <option value="0.03">Portanza inconsistente</option>
+       <option value="0.06"> Portanza accettabile </option>
+       <option value="0.1"> Portanza ottima</option>
+
+       </select>
+       </div>
+       </div>
+       
+        <div class="ins">
+       <div class="titoloins">
+      <label for="Rck">Rck  <b>N/mm<sup>2</sup></b> </label>
+       </div>
+       <div class="inputins"> 
+      <input type=number name="Rck" id="Rck" >
+       </div>
+       </div>
+       
+        <div class="ins">
+       <div class="titoloins">
+      <label for="uniformi">Carichi unif.<b>Kg/m<sup>2</sup></b> </label>
+       </div>
+       <div class="inputins"> 
+      <input type=number name="uniformi" id="uniformi" >
+       </div>
+       </div>
+       
+      <div class="ins">
+       <div class="titoloins">
+       <label>Stato sottofondo</label>
+       </div>
+       <div class="inssel"> 
+       <select id="sotto">
+       <option value="">----</option>
+       <option value="polietilene"> foglio di polietilene </option>
+       <option value="planare"> planare</option>
+       <option value="disassato"> non buono </option>
+       </select>
+       </div>
+       </div>
+  </div> 
+  <div id=scelta>   
+         <br>
+         
+       <button class="bottonev" id="calcola" onclick="controllo()">Calcola</button>
+       <button class="bottoner" type="reset" value="Reset">Reset </button>
+    
+ 
+
+                                                     <br /> 
+  <div id="attenzione"></div> 
+  </div>    
+ </div>                                                 
+<div id="risultati"> 
+ <br />
+<div id="mezzeria"><h1>Armatura in alto contro le fessurazioni</h1>
+                      
+<div id="areaferro"></div>
+
+  
+<div id="ferromezzeria"></div>      <br /><hr />
+<div id="alert"></div>
+ </div> 
+ <div id="debuglambda1"></div>
+  <div id="debuglambda2"></div>
+   <div id="debuglambda3"></div>
+ <div id="debuglambda">  </div>
+ <div id="debugM"></div>
+ <div id="debugcosigma"></div>
+  <div id="debugsigma"></div>
+  <div id="debugminf"></div>
+  <div id="debugcoefafi"></div>
+  <div id="debugafi"></div>
+<div id="fondo"><h1>Armatura sul fondo</h1>
+<div id="sigmafondo"></div>
+<div id="ferrofondo"></div>
+</div> 
+
+<br />
+<br />
+<div id="scelta2">
+ <button class="bottoner" id="ripeti" onclick="init()">Ripeti</button>
+
+  </div>
+
+ </div>
+</div>
+  </body>
+</html>

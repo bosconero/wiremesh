@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+        
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" id="viewport"/>
+ 
+    <link rel="stylesheet" type="text/css" href="css/rete.css" />
+    <script language="javaScript" src="js/rete.js"></script>
+  <title>Steel mesh calculation</title>
+    
+  </head>
+  <body onload="init()">
+     <div id="contentsoci"> 
+
+    <div id="contentapp">
+   <div id="intro"> 
+  <h1 class="titleindex">STEEL MESH CALCULATION  </h1> <br>
+  <p class="introtext"> 
+The wire mesh does not increase the bearing capacity of the slab but it serves:
+<ol>
+<li>if placed at the bottom is a static reinforcement (if the soil have a uncertain bearing capacity) </li>
+<li>if placed at 6 cm from the surface  (to avoid the skeleton effect) limits the open of the cracks</li>
+</ol>
+
+ </p> 
+
+  <button id="scendi" onclick="fineintro()" style="border:none;background-color:#fff;display:block;margin:0 auto;"><img src="img/btndwn.png" width="60" alt="scendi" /> </button>
+  </div>
+  <div id="pinserimento">
+  <div id="inserimento">
+       <div class="ins">
+       <div class="titoloins">
+      <label for="spesspav">Floor thickness cm</label>
+       </div>
+       <div class="inputins"> 
+        <input type=number name="spesspav" id="spesspav" autofocus>
+       </div>
+       </div>
+       
+       <div class="ins">
+       <div class="titoloins">
+      <label for="digiucont">Distance between joints ml </label>
+       </div>
+       <div class="inputins"> 
+      <input type=number name="digiucont" id="digiucont" >
+       </div>
+       </div>
+       
+        <div class="ins">
+       <div class="titoloins">
+      <label for="coeffreaz">Subgrade status </label>
+       </div>
+       <div class="inssel"> 
+       <select id="portanza">
+       <option value="0.03">Inconsistent subgrade</option>
+       <option value="0.06"> Acceptable subgrade</option>
+       <option value="0.1"> Optimal subgrade</option>
+
+       </select>
+       </div>
+       </div>
+       
+        <div class="ins">
+       <div class="titoloins">
+      <label for="Rck">concrete compressive strength  <b>N/mm<sup>2</sup></b> </label>
+       </div>
+       <div class="inputins"> 
+      <input type=number name="Rck" id="Rck" >
+       </div>
+       </div>
+       
+        <div class="ins">
+       <div class="titoloins">
+      <label for="uniformi">Uniforms loads <b>Kg/m<sup>2</sup></b> </label>
+       </div>
+       <div class="inputins"> 
+      <input type=number name="uniformi" id="uniformi" >
+       </div>
+       </div>
+       
+      <div class="ins">
+       <div class="titoloins">
+       <label>Subgrade planarity</label>
+       </div>
+       <div class="inssel"> 
+       <select id="sotto">
+       <option value="">----</option>
+       <option value="polyethylene"> waterproofed/polyethylene sheet </option>
+       <option value="planar"> planar</option>
+       <option value="not good"> not good </option>
+       </select>
+       </div>
+       </div>
+  </div> 
+  <div id=scelta>   
+         <br>
+         
+       <button class="bottonev" id="calcola" onclick="controllo()">Calculate</button>
+       <button class="bottoner" type="reset" value="Reset">Reset </button>
+    
+ 
+
+                                                     <br /> 
+  <div id="attenzione"></div> 
+  </div>    
+ </div>                                                 
+<div id="risultati"> 
+ <br />
+<div id="mezzeria"><h1>Wire mesh to contrast cracks</h1>
+                      
+<div id="areaferro"></div>
+
+  
+<div id="ferromezzeria"></div>      <br /><hr />
+<div id="alert"></div>
+ </div> 
+ <div id="debuglambda1"></div>
+  <div id="debuglambda2"></div>
+   <div id="debuglambda3"></div>
+ <div id="debuglambda">  </div>
+ <div id="debugM"></div>
+ <div id="debugcosigma"></div>
+  <div id="debugsigma"></div>
+  <div id="debugminf"></div>
+  <div id="debugcoefafi"></div>
+  <div id="debugafi"></div>
+<div id="fondo"><h1>Wire mesh at the bottom</h1>
+<div id="sigmafondo"></div>
+<div id="ferrofondo"></div>
+</div> 
+
+<br />
+<br />
+<div id="scelta2">
+ <button class="bottoner" id="ripeti" onclick="init()">Repeat</button>
+
+  </div>
+
+ </div>
+</div>
+  </body>
+</html>
